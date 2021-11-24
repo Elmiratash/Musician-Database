@@ -1,0 +1,42 @@
+html,
+body {
+    display: block;
+    background-color: black;
+    margin: 0;
+}
+
+header {
+    padding: 5px;
+    margin: 5px;
+}
+
+nav {
+    display: flex;
+    flex: auto;
+    justify-content: right;
+    padding: 10px;
+    margin: 20px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+}
+
+a {
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 20px;
+}
+
+a.primary {
+    color: white;
+    font-size: 25px;
+}
+
+a.primary:hover {
+    color: white;
+    font-size: 25px;
+}
+
+a.primary:active {
+    color: rgba(116, 116, 116, 0.788);
+    font-size: 30px;
+}
