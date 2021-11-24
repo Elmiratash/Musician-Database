@@ -1,0 +1,39 @@
+@font-face {
+    font-family: "Alfa";
+    src: url("../Fonts/AlfaSlabOne-Regular.ttf");
+}
+
+* {
+    font-family: "Alfa"
+}
+
+
+
+html, body {
+    margin: 0;
+}
+
+.card {
+    background: rgba( 0, 0, 0, 0.55 );
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37 );
+    backdrop-filter: blur( 5.5px );
+    -webkit-backdrop-filter: blur( 5.5px );
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18 );
+}
+
+.jumbotron {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    opacity: .8;
+}
+
+#title-text {
+    margin: 3rem;
+    color: white;
+}
