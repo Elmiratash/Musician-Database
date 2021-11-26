@@ -1,16 +1,36 @@
-var artists = "Red Hot Chilli Peppers"
 let Jumbotron = $(".jumbotron")
+let artistInput = $("#artist")
+let locationInput = $("#location")
+let Submit = $("#submit")
 
-fetch('https://rest.bandsintown.com/artists/' + artists + '/events?app_id=codingbootcamp', {
-        method: 'GET', //GET is the default.
+Submit.on('click', async () => {
+    let Artist = artistInput.val()
+    let Location = locationInput.val()
 
-    })
-    .then(function(response) {
-        return response.json();
-    })
-    .then(function(data) {
-        console.log(data);
-    });
+    let artistEvents = await fetchArtistEvents(Artist)
+    if(Location) artistEvents = await filterEventLocations(artistEvents, Location)
+    
+    console.log(artistEvents)
+})
+
+async function filterEventLocations(artistEvents, Location) {
+    let eventsArray = []
+    for(currentEvent of artistEvents) {
+        if(currentEvent.venue.city == Location || currentEvent.venue.city.includes(Location)) eventsArray.push(currentEvent)
+    }
+
+    return eventsArray;
+}
+
+async function fetchArtistEvents(artists) {
+    let artistEvents = await fetch(`https://rest.bandsintown.com/artists/${artists}/events?app_id=codingbootcamp`, { method: 'GET' })
+    artistEvents = await artistEvents.json()
+    
+    if(artistEvents.length < 1) return
+
+
+    return artistEvents
+}
 
 
 setBackgroundImage()
