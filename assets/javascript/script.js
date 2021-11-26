@@ -23,7 +23,7 @@ async function filterEventLocations(artistEvents, Location) {
 }
 
 async function fetchArtistEvents(artists) {
-    let artistEvents = await fetch(`https://rest.bandsintown.com/artists/${artists}/events?app_id=codingbootcamp`, { method: 'GET' })
+    let artistEvents = await fetch(`https://rest.bandsintown.com/artists/${artists}/events?app_id=6d75d8ac2c520ded53402bbdd9edc158`, { method: 'GET' })
     artistEvents = await artistEvents.json()
     
     if(artistEvents.length < 1) return
