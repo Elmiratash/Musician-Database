@@ -13,3 +13,37 @@ window.onscroll = function() {
 
     }
 }
+
+const toggleButton = document.getElementsByClassName('toggle-button')[0]
+const navbarLinks = document.getElementsByClassName('navbar-links')[0]
+
+toggleButton.addEventListener('click', () => {
+    navbarLinks.classList.toggle('active')
+})
+
+$(document).ready(function() {
+    let scrolling = false;
+
+    $("a").on('click', function(event) {
+        if (scrolling) return;
+        scrolling = true;
+
+        if (this.hash !== "") {
+
+            event.preventDefault();
+
+
+            var hash = this.hash;
+
+
+            if (!$(hash).offset()) return;
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - 300
+            }, 800, function() {
+                scrolling = false;
+
+                window.location.hash = hash - 300;
+            });
+        }
+    });
+});
