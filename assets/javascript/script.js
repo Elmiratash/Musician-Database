@@ -16,6 +16,7 @@ Submit.on('click', async () => {
     
     if(artistEvents.length == 0) return
 
+    console.log(artistEvents)
     musicianInformation.css("display", "block")
     await displayArtistInfo(artistEvents[0].artist)
     displayArtistEvents(artistEvents)
@@ -24,7 +25,6 @@ Submit.on('click', async () => {
 function displayArtistEvents(info) {
 
     for(artistEvent of info) {
-        console.log('d')
         let div = $("<div>")
         div.addClass("d-flex concert box col-8 justify-content-center")
 
@@ -35,15 +35,20 @@ function displayArtistEvents(info) {
         let venue = $("<div>")
         venue.addClass("venue")
         venue.text(artistEvent.venue.location)
+        
+        let a = $("<a>")
+        a.attr("href", artistEvent.url)
 
         let button = $("<button>")
         button.attr("type", "button")
+        button.attr("href", artistEvent.url)
         button.addClass("btn btn-primary tickets-button")
         button.text("Tickets")
-
+        
+        a.append(button)
         div.append(date)
         div.append(venue)
-        div.append(button)
+        div.append(a)
         Events.append(div)
     }
 }
