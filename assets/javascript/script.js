@@ -3,6 +3,10 @@ let artistInput = $("#artist")
 let locationInput = $("#location")
 let Submit = $("#submit")
 
+let musicianInformation = $(".musician-information")
+let artistInfo = $("#artist-info")
+let Events = $("#events")
+
 Submit.on('click', async () => {
     let Artist = artistInput.val()
     let Location = locationInput.val()
@@ -10,9 +14,54 @@ Submit.on('click', async () => {
     let artistEvents = await fetchArtistEvents(Artist)
     if(Location) artistEvents = await filterEventLocations(artistEvents, Location)
     
-    console.log(artistEvents)
+    if(artistEvents.length == 0) return
+
+    musicianInformation.css("display", "block")
+    await displayArtistInfo(artistEvents[0].artist)
+    displayArtistEvents(artistEvents)
 })
 
+function displayArtistEvents(info) {
+
+    for(artistEvent of info) {
+        console.log('d')
+        let div = $("<div>")
+        div.addClass("d-flex concert box col-8 justify-content-center")
+
+        let date = $("<div>")
+        date.addClass("date")
+        date.text(moment(artistEvent.datetime).format("MMMM Do, YYYY"))
+
+        let venue = $("<div>")
+        venue.addClass("venue")
+        venue.text(artistEvent.venue.location)
+
+        let button = $("<button>")
+        button.attr("type", "button")
+        button.addClass("btn btn-primary tickets-button")
+        button.text("Tickets")
+
+        div.append(date)
+        div.append(venue)
+        div.append(button)
+        Events.append(div)
+    }
+}
+
+async function displayArtistInfo(info) {
+
+    let Image = $("<img>")
+    Image.attr("id", "artist-image")
+    Image.attr("src", info.thumb_url)
+
+    let Name = $("<div>")
+    Name.attr("id", "artist-name")
+    Name.addClass("align-middle ml-5")
+    Name.text(info.name)
+
+    artistInfo.append(Name)
+    artistInfo.append(Image)
+}
 
 async function filterEventLocations(artistEvents, Location) {
     let eventsArray = []
