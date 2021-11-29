@@ -13,6 +13,7 @@ Submit.on('click', async () => {
     console.log(artistEvents)
 })
 
+
 async function filterEventLocations(artistEvents, Location) {
     let eventsArray = []
     for(currentEvent of artistEvents) {
@@ -28,10 +29,8 @@ async function fetchArtistEvents(artists) {
     
     if(artistEvents.length < 1) return
 
-
     return artistEvents
 }
-
 
 setBackgroundImage()
 async function setBackgroundImage() {
@@ -57,7 +56,7 @@ async function getImages() {
 async function getRandomImages() {
     let backgroundImage = await $.ajax({ 
         type: 'GET', 
-        url: `https://api.pexels.com/v1/search?query=concert&orientation=landscape&color=white&locale=en-US&per_page=50`, 
+        url: `https://api.pexels.com/v1/search?query=concert&orientation=landscape&color=white&locale=en-US&per_page=100`, 
         headers: {
             Authorization: "563492ad6f91700001000001c3ab8936662f45c48ef0844a767bbda8"
         } 
