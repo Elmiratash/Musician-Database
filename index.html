@@ -10,18 +10,30 @@
     <!-- Local CSS -->
     <link rel="stylesheet" href="./assets/CSS/styles.css">
     <title>Musician Database</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Kanit:wght@100;300&family=Nunito:wght@200&display=swap" rel="stylesheet">
 </head>
 
 <body>
+    <header>
+        <div class="header">
+            <div id="logo">
+                <a href="file:///Users/jaybarbanel/Desktop/Code/Class%20Content/Project%201%20/Musician-Database/index.html">
+                    <img src="./assets/Images/Screen Shot 2021-11-24 at 2.17.13 PM.png" style="width:75px; height:75px;"></img>
+                </a>
+            </div>
+            <h1>Musician Database</h1>
+        </div>
+    </header>
 
     <div class="d-flex align-items-center justify-content-center jumbotron jumbotron-fluid">
         <div class="text-center">
             <div class="card text-white mb-3">
 
                 <div id="title-text">
-                    <h1>Musician Database</h1>
+
                     <h2>Search by Musician and Location for concert information</h2>
-                    <button id="submit">Submit</button>
                 </div>
 
 
@@ -39,6 +51,7 @@
                         </div>
                         <input id="location" type="text" class="form-control" aria-label="Location" aria-describedby="inputGroup-sizing-default">
                     </div>
+                    <button id="submit" class="ripple">Submit</button>
                 </div>
             </div>
         </div>
