@@ -1,5 +1,6 @@
 var main = document.querySelector('.main');
 var nav = document.querySelector('.nav');
+var window = document.querySelector('.window');
 
 
 window.onscroll = function() {

@@ -1,5 +1,11 @@
+@font-face {
+    font-family: "Alfa";
+    src: url("../Fonts/AlfaSlabOne-Regular.ttf");
+}
+
 * {
     box-sizing: border-box;
+    font-family: "Alfa"
 }
 
 body {
@@ -52,15 +58,8 @@ div .box {
     margin-top: 50px;
     border-radius: 10px;
     box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.205);
-}
-
-.brand-title {
-    font-size: 1.5rem;
-    margin: .5rem;
-}
-
-.navbar-links {
-    height: 100%;
+    font-size: 30px;
+    text-align: left;
 }
 
 .navbar-links ul {
@@ -70,19 +69,25 @@ div .box {
 }
 
 .navbar-links li {
+    text-align: center;
     list-style: none;
 }
 
 .navbar-links li a {
-    display: block;
-    text-decoration: uppercase;
     text-align: center;
+    font-size: 20px;
+    text-decoration: none;
     color: white;
-    padding: 1rem;
+    padding: 10px;
+    list-style-type: none;
+    display: inline-block;
+    padding: 20px;
 }
 
 .navbar-links li:hover {
     background-color: #555;
+    background: #333;
+    color: #efefef
 }
 
 .toggle-button {
