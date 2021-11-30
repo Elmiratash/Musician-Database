@@ -23,7 +23,6 @@ Submit.on('click', async () => {
 })
 
 function displayArtistEvents(info) {
-
     for(artistEvent of info) {
         let div = $("<div>")
         div.addClass("d-flex concert box col-8 justify-content-center")
@@ -41,10 +40,9 @@ function displayArtistEvents(info) {
 
         let button = $("<button>")
         button.attr("type", "button")
-        button.attr("href", artistEvent.url)
         button.addClass("btn btn-primary tickets-button")
         button.text("Tickets")
-        
+
         a.append(button)
         div.append(date)
         div.append(venue)
@@ -64,8 +62,8 @@ async function displayArtistInfo(info) {
     Name.addClass("align-middle ml-5")
     Name.text(info.name)
 
-    artistInfo.append(Name)
     artistInfo.append(Image)
+    artistInfo.append(Name)
 }
 
 async function filterEventLocations(artistEvents, Location) {
@@ -110,7 +108,7 @@ async function getImages() {
 async function getRandomImages() {
     let backgroundImage = await $.ajax({ 
         type: 'GET', 
-        url: `https://api.pexels.com/v1/search?query=concert&orientation=landscape&color=white&locale=en-US&per_page=100`, 
+        url: `https://api.pexels.com/v1/search?query=concert&orientation=landscape&color=white&locale=en-US&per_page=50`, 
         headers: {
             Authorization: "563492ad6f91700001000001c3ab8936662f45c48ef0844a767bbda8"
         } 
