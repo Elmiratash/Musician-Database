@@ -52,6 +52,9 @@ function getVenueInfo(event) {
         })
         .then(function(data) {
             console.log(data)
+            $('#modalTitle').text(data.result.name)
+            $('#modalButtonLink').attr('href', data.result.website)
+            $('#venueRating').text(data.result.rating)
         })
 
 }

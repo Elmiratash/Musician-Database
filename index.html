@@ -29,7 +29,7 @@
             <div class="col-lg-6 col-md-12 card text-white mb-3">
 
                 <div class="title-text text-center">
-                    <h2>Search by Musician and Location for concert information</h2>
+                    <h2>Search by musician for upcoming conert information</h2>
                 </div>
 
                 <div class="card-body text-center">
@@ -39,34 +39,32 @@
                         <input id="artist" type="text" class="form-control" aria-label="Artist" aria-describedby="inputGroup-sizing-default">
 
                         <!-- Location -->
-                        <div class="ml-5 input-group-prepend"> <span class="input-group-text" id="inputGroup-sizing-default">Location</span> </div>
-                        <input id="location" type="text" class="form-control" aria-label="Location" aria-describedby="inputGroup-sizing-default">
+                        <!-- <div class="ml-5 input-group-prepend"> <span class="input-group-text" id="inputGroup-sizing-default">Location</span> </div>
+                        <input id="location" type="text" class="form-control" aria-label="Location" aria-describedby="inputGroup-sizing-default"> -->
                     </div>
-                    <a href="#artist-info"><button id="submit">Submit</button></a>
+                    <a href="#artist-info"><button id="submit">Search</button></a>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Button trigger modal -->
-    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-    Launch demo modal
-  </button>
 
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <h5 class="modal-title" id="modalTitle">Modal title</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
-                    <img src="http://www.fillmurray.com/460/300" alt="" />
+                    <img class="imageCenter" src="./assets/Images/logo.png" style="width:200px; height:200px;" />
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <a href="" id="modalButtonLink">
+                        <button type="button" class="btn btn-primary">Venue Website</button>
+                    </a>
+                    <h6 id="venueRating">Venue Rating</h6>
                 </div>
             </div>
         </div>
