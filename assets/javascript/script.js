@@ -30,7 +30,7 @@ function getVenueInfo(event) {
 
     let query = $(buttonParent).attr('data-venuename')
 
-    fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?inputtype=textquery&input=staplescenter&key=AIzaSyBB3ZBBQz3jrOk3wbOE4_Vwmd17g31AASk', {
+    fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/findplacefromtext/json?inputtype=textquery&input=' + query + '&key=AIzaSyBB3ZBBQz3jrOk3wbOE4_Vwmd17g31AASk', {
             method: "GET",
 
         })
@@ -40,6 +40,18 @@ function getVenueInfo(event) {
         })
         .then(function(data) {
             console.log(data.candidates[0].place_id)
+
+            let placeId = data.candidates[0].place_id
+            return fetch('https://cors-anywhere.herokuapp.com/https://maps.googleapis.com/maps/api/place/details/json?key=AIzaSyBB3ZBBQz3jrOk3wbOE4_Vwmd17g31AASk&place_id=' + placeId)
+
+
+        })
+        .then(function(response) {
+            console.log(response)
+            if (response.ok) return response.json()
+        })
+        .then(function(data) {
+            console.log(data)
         })
 
 }
