@@ -10,32 +10,33 @@ let Events = $("#events")
 Submit.on('click', async () => {
     let Artist = artistInput.val()
     let Location = locationInput.val()
+    if(!Artist) return
 
     let artistEvents = await fetchArtistEvents(Artist)
+    await displayArtistInfo(artistEvents[0].artist)
     if(Location) artistEvents = await filterEventLocations(artistEvents, Location)
     
     if(artistEvents.length == 0) return
 
-    console.log(artistEvents)
     musicianInformation.css("display", "block")
-    await displayArtistInfo(artistEvents[0].artist)
     displayArtistEvents(artistEvents)
 })
 
 function displayArtistEvents(info) {
     for(artistEvent of info) {
         let div = $("<div>")
-        div.addClass("d-flex concert box col-8 justify-content-center")
+        div.addClass("row concert box col-6 justify-content-center")
 
         let date = $("<div>")
-        date.addClass("date")
+        date.addClass("date d-flex justify-content-center align-items-center text-center col-md-12 col-lg-4")
         date.text(moment(artistEvent.datetime).format("MMMM Do, YYYY"))
 
         let venue = $("<div>")
-        venue.addClass("venue")
+        venue.addClass("venue d-flex justify-content-center align-items-center text-center col-md-12 col-lg-4")
         venue.text(artistEvent.venue.location)
         
         let a = $("<a>")
+        a.addClass("d-flex justify-content-center align-items-center text-center col-md-12 col-lg-4")
         a.attr("href", artistEvent.url)
 
         let button = $("<button>")
@@ -53,6 +54,9 @@ function displayArtistEvents(info) {
 
 async function displayArtistInfo(info) {
 
+    await artistInfo.empty()
+    await Events.empty()
+
     let Image = $("<img>")
     Image.attr("id", "artist-image")
     Image.attr("src", info.thumb_url)
@@ -69,9 +73,12 @@ async function displayArtistInfo(info) {
 async function filterEventLocations(artistEvents, Location) {
     let eventsArray = []
     for(currentEvent of artistEvents) {
-        if(currentEvent.venue.city == Location || currentEvent.venue.city.includes(Location)) eventsArray.push(currentEvent)
+        if(currentEvent.venue.city.toLowerCase() == Location.toLowerCase() || currentEvent.venue.city.toLowerCase().includes(Location.toLowerCase())) {
+            eventsArray.push(currentEvent)
+            console.log(currentEvent)
+        }
     }
-
+    
     return eventsArray;
 }
 
@@ -116,4 +123,3 @@ async function getRandomImages() {
 
     return RandomImage = backgroundImage.photos;
 }
-
