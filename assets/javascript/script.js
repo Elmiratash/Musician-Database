@@ -54,7 +54,11 @@ function getVenueInfo(event) {
             console.log(data)
             $('#modalTitle').text(data.result.name)
             $('#modalButtonLink').attr('href', data.result.website)
-            $('#venueRating').text(data.result.rating)
+            let stars = ""
+            for (let i = 0; i < Math.round(data.result.rating); i++) {
+                stars = stars + String.fromCharCode(9733)
+            }
+            $('#venueRating').text(stars)
         })
 
 }
