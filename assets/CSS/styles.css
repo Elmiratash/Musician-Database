@@ -1,136 +1,106 @@
-@font-face {
-    font-family: "Alfa";
-    src: url("../Fonts/AlfaSlabOne-Regular.ttf");
-}
-
 * {
-    box-sizing: border-box;
-    font-family: "Alfa"
+    font-family: 'DM Serif Display', serif;
 }
 
+html,
 body {
-    margin: 0;
     padding: 0;
     background-color: rgb(0, 0, 0);
 }
 
-video {
-    height: 100vh;
-    justify-items: center;
+a {
+    margin: 0;
 }
 
-.main {
-    height: 100vh;
-    background: black;
+.title-text {
+    margin: 3rem;
+    color: white;
+}
+
+
+/* Project Header */
+
+#logo {
+    width: 5%;
+    display: inline;
+}
+
+#project-title {
+    display: inline;
+    width: 90%;
+    color: white;
+    margin-top: 10px;
+}
+
+.header {
+    background-color: black;
+    height: 75px;
+    display: flex;
     text-align: center;
 }
 
-.nav {
-    width: 100%;
-    text-align: center;
-    background: black;
-    left: 0;
-    box-shadow: 0px 5px 5px -2px rgba(0, 0, 0, .2);
+
+/* Entire Background */
+
+.jumbotron {
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: black;
+    opacity: .8;
 }
 
-.top-nav {
-    position: fixed;
-    top: 0;
+
+/* Search Card */
+
+.card {
+    background: rgba( 0, 0, 0, 0.55);
+    box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
+    backdrop-filter: blur( 5.5px);
+    -webkit-backdrop-filter: blur( 5.5px);
+    border-radius: 10px;
+    border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
-.bottom-nav {
-    position: absolute;
-    bottom: 0;
+.search {
+    margin-top: 18rem;
 }
 
-div .box {
-    width: 70%;
-    margin: 50px auto;
+#submit {
+    width: 10rem;
+    margin-top: 10px;
     padding: 10px;
+}
+
+
+/* Artist Information */
+
+.musician-information {
+    display: none;
 }
 
 .box {
-    width: 1500px;
-    height: 500px;
-    background: rgba(173, 172, 172, 0.473);
-    display: center;
-    padding: 50px;
-    margin-top: 50px;
+    margin: 2rem;
+    background-color: white;
+    padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.205);
     font-size: 30px;
-    text-align: left;
 }
 
-.navbar-links ul {
-    display: flex;
-    margin: 0;
-    padding: 0;
+#artist-name {
+    font-size: 6rem;
 }
 
-.navbar-links li {
-    text-align: center;
-    list-style: none;
+#artist-image {
+    height: 18rem;
+    width: 18rem;
+    border-radius: 50%;
 }
 
-.navbar-links li a {
-    text-align: center;
-    font-size: 20px;
-    text-decoration: none;
-    color: white;
-    padding: 10px;
-    list-style-type: none;
-    display: inline-block;
-    padding: 20px;
-}
-
-.navbar-links li:hover {
-    background-color: #555;
-    background: #333;
-    color: #efefef
-}
-
-.toggle-button {
-    position: absolute;
-    top: .75rem;
-    right: 1rem;
-    display: none;
-    flex-direction: column;
-    justify-content: space-between;
-    width: 30px;
-    height: 21px;
-}
-
-.toggle-button .bar {
-    height: 3px;
-    width: 100%;
-    background-color: white;
-    border-radius: 10px;
-}
-
-@media (max-width: 800px) {
-    .navbar {
-        flex-direction: column;
-        align-items: flex-start;
-    }
-    .toggle-button {
-        display: flex;
-    }
-    .navbar-links {
-        display: none;
-        width: 100%;
-    }
-    .navbar-links ul {
-        width: 100%;
-        flex-direction: column;
-    }
-    .navbar-links ul li {
-        text-align: center;
-    }
-    .navbar-links ul li a {
-        padding: .5rem 1rem;
-    }
-    .navbar-links.active {
-        display: flex;
-    }
+.imageCenter {
+    margin-left: 30%;
 }
