@@ -1,8 +1,10 @@
 * {
     font-family: 'DM Serif Display', serif;
+    text-decoration-line: none;
 }
 
-html, body {
+html,
+body {
     padding: 0;
     background-color: rgb(0, 0, 0);
 }
@@ -10,12 +12,15 @@ html, body {
 a {
     margin: 0;
 }
+
 .title-text {
     margin: 3rem;
     color: white;
 }
 
+
 /* Project Header */
+
 #logo {
     width: 5%;
     display: inline;
@@ -35,7 +40,9 @@ a {
     text-align: center;
 }
 
+
 /* Entire Background */
+
 .jumbotron {
     margin: 0;
     padding: 0;
@@ -47,8 +54,12 @@ a {
     opacity: .8;
 }
 
+
 /* Search Card */
+
 .card {
+    width: auto;
+    height: 330px;
     background: rgba( 0, 0, 0, 0.55);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 5.5px);
@@ -57,24 +68,32 @@ a {
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
+.input-group {
+    width: 500px;
+    margin: auto;
+}
+
 .search {
     margin-top: 18rem;
 }
 
 #submit {
     width: 10rem;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
 }
 
+
 /* Artist Information */
+
 .musician-information {
     display: none;
 }
 
 .box {
+    height: auto;
     margin: 2rem;
-    background-color: white;
+    background-color: hsl(0, 4%, 75%);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.205);
@@ -83,10 +102,37 @@ a {
 
 #artist-name {
     font-size: 6rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 #artist-image {
     height: 18rem;
     width: 18rem;
     border-radius: 50%;
+}
+
+.imageCenter {
+    margin-left: 30%;
+}
+
+.listing-button {
+    width: 150px;
+    height: 40px;
+    font-size: 17px;
+    margin-left: 700px;
+    margin-bottom: 10px;
+    background-color: black;
+    border-color: black;
+}
+
+.tickets-button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    text-decoration-line: none;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    background-color: black;
+    border-color: black;
 }
