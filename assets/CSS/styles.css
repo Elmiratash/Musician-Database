@@ -1,5 +1,6 @@
 * {
     font-family: 'DM Serif Display', serif;
+    text-decoration-line: none;
 }
 
 html,
@@ -57,6 +58,8 @@ a {
 /* Search Card */
 
 .card {
+    width: auto;
+    height: 330px;
     background: rgba( 0, 0, 0, 0.55);
     box-shadow: 0 8px 32px 0 rgba( 31, 38, 135, 0.37);
     backdrop-filter: blur( 5.5px);
@@ -65,13 +68,18 @@ a {
     border: 1px solid rgba( 255, 255, 255, 0.18);
 }
 
+.input-group {
+    width: 500px;
+    margin: auto;
+}
+
 .search {
     margin-top: 18rem;
 }
 
 #submit {
     width: 10rem;
-    margin-top: 10px;
+    margin-top: 20px;
     padding: 10px;
 }
 
@@ -83,8 +91,9 @@ a {
 }
 
 .box {
+    height: auto;
     margin: 2rem;
-    background-color: white;
+    background-color: hsl(0, 4%, 75%);
     padding: 2rem;
     border-radius: 10px;
     box-shadow: 0 0 10px -3px rgba(0, 0, 0, 0.205);
@@ -93,6 +102,8 @@ a {
 
 #artist-name {
     font-size: 6rem;
+    text-transform: uppercase;
+    text-align: center;
 }
 
 #artist-image {
@@ -103,4 +114,25 @@ a {
 
 .imageCenter {
     margin-left: 30%;
+}
+
+.listing-button {
+    width: 150px;
+    height: 40px;
+    font-size: 17px;
+    margin-left: 700px;
+    margin-bottom: 10px;
+    background-color: black;
+    border-color: black;
+}
+
+.tickets-button {
+    width: 150px;
+    height: 40px;
+    font-size: 20px;
+    text-decoration-line: none;
+    margin-left: 35px;
+    margin-bottom: 10px;
+    background-color: black;
+    border-color: black;
 }

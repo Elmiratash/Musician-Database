@@ -1,4 +1,3 @@
-
 let Jumbotron = $(".jumbotron")
 let artistInput = $("#artist")
 let locationInput = $("#location")
